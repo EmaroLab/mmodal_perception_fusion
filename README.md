@@ -121,13 +121,13 @@ For the second output, the module identifies any common features between the obj
 In this module, the data received from the Reasoner and the Feature Selector are joined.
 From the Reasoner, this module receives the objects' IDs detected by different perception modules plus the degree of correlation (a number that indicates the reliability of the analysis obtained).
 From Feature Selector, Feature Matcher receives all data of objects detected.
-The Features Matcher finds the information by searching for objects' IDs and assorting all features coming from different perceptive modules. Then, it returns an output message for each object recognized comprehensive with all information collected by the various sensors.
+The Features Matcher finds the information by searching for objects' IDs and assorting all features coming from different perceptive modules. Then, it returns an output message for each object recognized comprehensive with all information collected by the various sensors. 
 * __Input__: a selectorMatcher.msg | outputReasoner.msg
 * __Output__: a matcher_out.msg
 * __Publisher__: /featureMatcher/dataPub [__P__]
 
-#### Correlation Table Manager.
-Correlation Table Manager receives messages coming from the "Feature Selector" node and computes correlations between objects perceived by different perception modules with features in common. Indeed, it builds binomial(N,2) correlation tables (where N is the number of perceptive modules with at least one feature in common) and appropriately sends these data to the "Reasoner" module
+#### Correlation Table Manager
+Correlation Table Manager receives messages coming from the "Feature Selector" node and computes correlations between objects perceived by different perception modules with features in common. Indeed, it builds binomial(N,2) correlation tables (where N is the number of perceptive modules with at least one feature in common) and appropriately sends these data to the "Reasoner" module. For the implementation click [here](#here)
 * __Input__: selectorMatcher.msg
 * __Output__: correlationTable
 * __Publisher__: /correlationTables [__T__]
@@ -140,8 +140,8 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 
 # Implementation
 
-## correlation_functions & tableMatcher
-
+<a name="here"></a>
+## Correlation Table Manager Implementation 
 
 ## Contents:
 
